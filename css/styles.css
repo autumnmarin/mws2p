@@ -10,6 +10,9 @@ body {
 	body {
 		background-color: lightblue;
 }
+#maincontent{
+	align-content: center !important;
+}
 	.inside #map-container {
 	  height: 50% !important;
 	  width: 100% !important;
@@ -30,7 +33,10 @@ body {
 	ul{
 		width: 100% !important;
 	}
-
+	nav h1 a {
+		letter-spacing: 0px !important;
+		font-size: 18pt !important;
+	}
 }
 
 body,td,th,p{
