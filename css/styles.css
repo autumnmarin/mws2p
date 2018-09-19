@@ -1,29 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
-body {
-    background-color: lightgreen;
-}
-
-input: focus{
-	border-width: thick !important;
-	border-color: red !important;
-  background-color: blue !important;
-}
-
 @media only screen and (max-width: 800px) {
 
-	body {
-		background-color: lightblue;
-}
-#maincontent{
-	align-content: center !important;
-}
 	.inside #map-container {
 	  height: 50% !important;
 	  width: 100% !important;
-		/*right: auto !important;
-		display: block;*/
 	}
 	.inside #map {
 		height: 500px;
@@ -52,7 +34,7 @@ body,td,th,p{
 	line-height: 1.25;
 }
 body {
-	/*background-color: #fdfdfd;*/
+
 	margin: 5;
 	position:relative;
 }
