@@ -5,6 +5,12 @@ body {
     background-color: lightgreen;
 }
 
+input: focus{
+	border-width: thick !important;
+	border-color: red !important;
+  background-color: blue !important;
+}
+
 @media only screen and (max-width: 800px) {
 
 	body {
@@ -43,7 +49,7 @@ body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12pt;
 	color: #333;
-	line-height: 1.5;
+	line-height: 1.25;
 }
 body {
 	/*background-color: #fdfdfd;*/
@@ -56,11 +62,12 @@ ul, li {
 	color: #333;
 }
 a {
-	color: orange;
+	color: #FF4500;
 	text-decoration: none;
+	font-weight: bold;
 }
 a:hover, a:focus {
-	color: #3397db;
+	color: #3335FF;
 	text-decoration: none;
 }
 a img{
@@ -79,13 +86,17 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
-  background-color: #444;
-  color: #aaa;
-  letter-spacing: 1px;
+  background-color: #333;
+  letter-spacing: 1.2px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
 	width: 100%;
+	color: #fff;
+}
+
+#footer, a {
+	color: #fff;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -147,7 +158,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  background-color: #3397DB;
+  background-color: #3335FF;
   align-items: center;
 	padding-bottom: 10px;
 }
@@ -199,7 +210,7 @@ min-width: 300px;
 
 }
 #restaurants-list li h1 {
-  color: #f18200;
+  color: #FF4500;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: bold;
@@ -215,12 +226,13 @@ min-width: 300px;
 	padding-left: 7px;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #333;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
-	font-weight: bold;
+  font-size: 12pt;
+	letter-spacing: 1px;
+	font-weight: normal;
   margin: 15px 0 0;
   padding: 8px 30px 10px;
   text-align: center;
@@ -256,7 +268,7 @@ min-width: 300px;
 	position: absolute;
 }
 #restaurant-name {
-  color: #f18200;
+  color: #FF4500;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   letter-spacing: 0;
@@ -314,7 +326,7 @@ min-width: 300px;
 }
 #reviews-list li p {
   margin: 0 0 0px;
-	padding: 5px;
+	padding: 10px;
 }
 #restaurant-hours td {
   color: #666;
