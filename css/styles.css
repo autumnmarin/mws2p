@@ -1,6 +1,7 @@
+/*Resubmission*/
+
 @charset "utf-8";
 /* CSS Document */
-
 
 @media only screen and (max-width: 292px) {
 	nav h1 a{
@@ -22,6 +23,8 @@
 		font-size: 18pt !important;
 	}
 }
+
+
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;

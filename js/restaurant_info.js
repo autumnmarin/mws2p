@@ -1,3 +1,5 @@
+/*Resubmission*/
+
 let restaurant;
 var newMap;
 
