@@ -1,26 +1,22 @@
 @charset "utf-8";
 /* CSS Document */
 
-@media only screen and (max-width: 800px) {
 
-	.inside #map-container {
-	  height: 50% !important;
-	  width: 100% !important;
+@media only screen and (max-width: 292px) {
+	nav h1 a{
+		line-height: normal !important;
 	}
-	.inside #map {
-		height: 500px;
-		width: 60%;
-		display: block;
-	}
+}
+@media only screen and (max-width: 600px) {
 
 	#restaurant-container, #reviews-container {
 	  padding: 500px 40px 30px !important;
 	  width: 100% !important;
 		display: block !important;
 	}
-	ul{
-		width: 100% !important;
-	}
+#restaurants-list li{
+	max-width: 100% !important;
+}
 	nav h1 a {
 		letter-spacing: 0px !important;
 		font-size: 18pt !important;
@@ -34,7 +30,6 @@ body,td,th,p{
 	line-height: 1.25;
 }
 body {
-
 	margin: 5;
 	position:relative;
 }
@@ -133,7 +128,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-  /*height: 400px;*/
+  height: 400px;
   width: 100%;
   background-color: #ccc;
 }
@@ -174,15 +169,13 @@ display: flex;
 flex-wrap: wrap;
 }
 #restaurants-list li {
-background-color: #fff;
-border: 2px solid #ccc;
-font-family: Arial,sans-serif;
-margin: 10px;
-padding: 0 0px 15px;
-text-align: left;
-flex-wrap: wrap;
-max-width: 28%;
-min-width: 300px;
+	background-color: #fff;
+	border: 2px solid #ccc;
+	font-family: Arial,sans-serif;
+	margin: 10px;
+	padding: 0 0px 15px;
+	text-align: left;
+	max-width: 28%;
 }
 
 #restaurants-list .restaurant-img {
