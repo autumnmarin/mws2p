@@ -10,13 +10,31 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 1337; // Change this to your server port
-    return `http://localhost:${port}/restaurants`;
+    const port = 1337 // Change this to your server port
+    return `http://localhost:${port}/restaurants.json`;
   }
 
   /**
    * Fetch all restaurants.
-   */
+  */
+
+   fetch(DBHelper.DATABASE_URL)
+   .then(function(response) {
+       // This will parse the JSON response
+        if (response.status!==200) {
+          console.log('error message' + response.status);
+          return;
+        }
+        //examine response
+        response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  ).catch(function(err){
+      console.log('fetch error ', err);
+   });
+
+   /*
   static fetchRestaurants(callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', DBHelper.DATABASE_URL);
@@ -32,7 +50,7 @@ class DBHelper {
     };
     xhr.send();
   }
-
+*/
   /**
    * Fetch a restaurant by its ID.
    */
