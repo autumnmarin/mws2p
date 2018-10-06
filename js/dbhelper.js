@@ -20,16 +20,19 @@ class DBHelper {
 
    fetch(DBHelper.DATABASE_URL)
    .then(function(response) {
-       // This will parse the JSON response
+       // Parse json
+       //If response is not 200 / error, give this error message and the response status
         if (response.status!==200) {
           console.log('error message' + response.status);
           return;
         }
+        //else there was a response received, console.log the data, why?
         //examine response
         response.json().then(function(data) {
         console.log(data);
       });
     }
+    //this is a catch in case there is an error but didn't the !200
   ).catch(function(err){
       console.log('fetch error ', err);
    });
