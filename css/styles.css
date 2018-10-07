@@ -181,7 +181,7 @@ flex-wrap: wrap;
 	max-width: 28%;
 }
 
-#restaurants-list .restaurant-imgjpg {
+#restaurants-list .restaurant-img {
   background-color: #ccc;
   margin: 0;
   max-width: 200px;
