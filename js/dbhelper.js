@@ -9,33 +9,28 @@ class DBHelper {
    * Database URL.
    * Change this to restaurants.json file location on your server.
    */
-  static get DATABASE_URL() {
-    const port = 1337 // Change this to your server port
-    return `http://localhost:${port}/restaurants.json`;
-  }
+   static get DATABASE_URL() {
+       const port = 1337
+       return `http://localhost:${port}/restaurants`;
+   }
 
   /**
    * Fetch all restaurants.
   */
-
-   fetch(DBHelper.DATABASE_URL)
-   .then(function(response) {
-       // Parse json
-       //If response is not 200 / error, give this error message and the response status
-        if (response.status!==200) {
-          console.log('error message' + response.status);
-          return;
-        }
-        //else there was a response received, console.log the data, why?
-        //examine response
-        response.json().then(function(data) {
-        console.log(data);
+  static fetchRestaurants(callback) {
+      fetch(DBHelper.DATABASE_URL)
+      .then(function(response) {
+          if (response.status !== 200) {
+              console.log('error message' + response.status);
+              return;
+          }
+          response.json().then(function(data) {
+              console.log(data);
+          });
+      }).catch(function(err) {
+          console.log('fetch error ', err);
       });
-    }
-    //this is a catch in case there is an error but didn't the !200
-  ).catch(function(err){
-      console.log('fetch error ', err);
-   });
+  }
 
    /*
   static fetchRestaurants(callback) {
