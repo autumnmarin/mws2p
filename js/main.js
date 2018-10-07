@@ -164,8 +164,18 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
 
+  /* Commented out, decided to use coming soon image saved as undefined.jpg
+
+  if(image.class == 'restaurant-img') {
+      image.src = './img/${restaurant.phtogograph).jpg';
+    } else {
+      image.src = './img/placeholder.jpg';
+  }*/
+
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
+
+
 
   const alt = image.setAttribute('alt',restaurant.alt);
 
