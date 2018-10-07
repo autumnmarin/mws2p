@@ -21,16 +21,16 @@ class DBHelper {
     let fetchURL;
     if(!id){
       fetchURL = DBHelper.DATABASE_URL;
-    } else {
+      } else {
       fetchURL = DBHelper.DATABASE_URL + '/' + id;
-    }
-    fetch(fetchURL)
-    .then(response => {
-      response.json().then(restaurants => {
+      }
+      fetch(fetchURL)
+      .then(response => {
+        response.json().then(restaurants => {
         console.log("restaurants JSON: ",restaurants);
         callback(null,restaurants);
       }).catch(function(err) {
-          console.log('fetch error ', err);
+        console.log('fetch error ', err);
       });
     })
   };
@@ -177,7 +177,7 @@ class DBHelper {
       url: DBHelper.urlForRestaurant(restaurant),
       map: map,
       animation: google.maps.Animation.DROP}
-    );
+    );jjffjjfjfjfjksfjka
     return marker;
   } */
 

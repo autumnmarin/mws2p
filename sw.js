@@ -1,17 +1,55 @@
-/*Resubmission*/
+var CACHE_NAME = 'apcache2';
+var urlsToCache = [
+  '/',
+  'index.html',
+  'restaurant.html',
+  '/css/styles.css',
+  '/js/main.js',
+  '/js/dbhelper.js',
+  '/js/restaurant_info.js',
+  '/js/idb-test.js',
+  'favicon.ico'
+];
+
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
+  );
+});
+
+
+
 
 /*
-        return fetch(event.request).then(function (response) {
-            console.log("made a fetch");
-            let responseToCache = response.clone();
-
-            caches
-                .open(reviewCache)
-                .then(function (cache) {
-                    cache.put(event.request, responseToCache);
-                })
-            return response;
-        })
-    }));
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('apcache').then(function(cache) {
+      return cache.addAll([
+        'index.html',
+        'restaurant.html',
+        '/css/styles.css'
+        // etc
+      ]);
+    })
+  );
 });
 */
