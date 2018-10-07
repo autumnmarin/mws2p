@@ -1,4 +1,4 @@
-/*JSON Response*/
+/*Resubmission*/
 
 /**
  * Common database helper functions.
@@ -35,7 +35,7 @@ class DBHelper {
     })
   };
 
-  /*
+  /**
    * Fetch a restaurant by its ID.
    */
   static fetchRestaurantById(id, callback) {
@@ -154,7 +154,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    return (`/img/${restaurant.photograph}.jpg`);
   }
 
   /**
