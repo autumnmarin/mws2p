@@ -5,12 +5,84 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
+/*
+function storeJSONLocal(){
+  fetch(DBHelper.DATABASE_URL)
+   .then(response => response.json())
+   .then(data =>{
+    //open indexDB database and add data in this then
+    idb.open('restaurant_info', 1, function(upgradeDB) {
+      var store = upgradeDB.createObjectStore('restaurants', {
+        keyPath: 'id'
+      });
 
+   for(i=0; i < data.length; i++){
+      store.put({id:data[i].id,name: data[i].name});
+      console.log(data[i].name); //test to see if this works
+    }
+  });
+  });
+}
+*/
 
-/*AP SW BEGIN*/
+/*AP IDB BEGIN
 
+function storeJSONLocal(){
+  fetch(DBHelper.DATABASE_URL)
+  .then(response => response.json())
+  .then(data => {
+    idb.open('restaurant_info',1, function(upgradeDB){
+      var store = upgradeDB.createObjectStore('restaurants', {
+        keyPath: 'id'
+      });
+    for (i=0; i<data.length; i++){
+      store.put({id:data[i].id,name: data[i].name});
+      console.log(data[i].name);
+    }
+  });
+  });
+}
+*/
+/*  Save copy, this code creates an IDB database successfully*/
+var db;
+var openRequest = indexedDB.open('test_db', 1);
+openRequest.onupgradeneeded = function(e) {
+  var db = e.target.result;
+  console.log('running onupgradeneeded');
+  if (!db.objectStoreNames.contains('store')) {
+    var storeOS = db.createObjectStore('store',
+      {keyPath: 'name'});
+  }
+};
+openRequest.onsuccess = function(e) {
+  console.log('message: running onsuccess');
+  db = e.target.result;
+  addItem();
+};
+openRequest.onerror = function(e) {
+  console.log('message: onerror!');
+  console.dir(e);
+};
 
+function addItem() {
+  var transaction = db.transaction(['store'], 'readwrite');
+  var store = transaction.objectStore('store');
+  var item = {
+    name: 'banana',
+    price: '$2.99',
+    description: 'It is a purple banana!',
+    created: new Date().getTime()
+  };
 
+ var request = store.add(item);
+
+ request.onerror = function(e) {
+    console.log('Error', e.target.error.name);
+  };
+  request.onsuccess = function(e) {
+    console.log('Woot! Did it');
+  };
+}
 /*AP SW END*/
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
