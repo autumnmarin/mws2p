@@ -35,21 +35,3 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
-
-
-
-
-/*
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('apcache').then(function(cache) {
-      return cache.addAll([
-        'index.html',
-        'restaurant.html',
-        '/css/styles.css'
-        // etc
-      ]);
-    })
-  );
-});
-*/

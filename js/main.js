@@ -5,6 +5,8 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
+
+
 /*
 function storeJSONLocal(){
   fetch(DBHelper.DATABASE_URL)
@@ -45,7 +47,9 @@ function storeJSONLocal(){
 */
 /*  Save copy, this code creates an IDB database successfully*/
 var db;
+
 var openRequest = indexedDB.open('test_db', 1);
+
 openRequest.onupgradeneeded = function(e) {
   var db = e.target.result;
   console.log('running onupgradeneeded');
@@ -55,12 +59,12 @@ openRequest.onupgradeneeded = function(e) {
   }
 };
 openRequest.onsuccess = function(e) {
-  console.log('message: running onsuccess');
+  console.log('running onsuccess');
   db = e.target.result;
   addItem();
 };
 openRequest.onerror = function(e) {
-  console.log('message: onerror!');
+  console.log('onerror!');
   console.dir(e);
 };
 
@@ -83,6 +87,8 @@ function addItem() {
     console.log('Woot! Did it');
   };
 }
+
+
 /*AP SW END*/
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
